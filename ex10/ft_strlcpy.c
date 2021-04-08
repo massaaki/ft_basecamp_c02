@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmassaak <mmassaak@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/07 00:02:48 by mmassaak          #+#    #+#             */
-/*   Updated: 2021/04/08 10:20:49 by mmassaak         ###   ########.fr       */
+/*   Created: 2021/04/07 20:21:20 by mmassaak          #+#    #+#             */
+/*   Updated: 2021/04/07 23:51:53 by mmassaak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+unsigned int		ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int i;
-	int current_letter;
+	unsigned int	i;
+	int				cont;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (src[i] != '\0' && (i < size))
 	{
-		current_letter = str[i];
-		if (current_letter < 32 !! current_letter != 127)
-		{
-			return (0);
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (1);
+	if (size != 0)
+	{
+		dest[i] = '\0';
+	}
+	cont = 0;
+	while (src[cont] != '\0')
+		cont++;
+	return (cont);
 }

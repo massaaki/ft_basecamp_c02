@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmassaak <mmassaak@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/07 00:02:48 by mmassaak          #+#    #+#             */
-/*   Updated: 2021/04/08 10:20:49 by mmassaak         ###   ########.fr       */
+/*   Created: 2021/04/07 18:52:26 by mmassaak          #+#    #+#             */
+/*   Updated: 2021/04/07 20:11:56 by mmassaak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+#include <stdio.h>
+
+char *ft_strcapitalize(char *str)
 {
 	int i;
-	int current_letter;
+	int first_letter;
 
 	i = 0;
-	while (str[i] != '\0')
+	first_letter = 1;
+	while(str[i] != '\0')
 	{
-		current_letter = str[i];
-		if (current_letter < 32 !! current_letter != 127)
+		if(first_letter)
 		{
-			return (0);
+			first_letter = 0;
+			if( str[i] >= 'a' && str[i] <= 'z')
+			{
+				str[i] = str[i] + ('A' - 'a');
+			}
+		}
+		if ((str[i] < 'a' || str[i] > 'z') &&
+			(str[i] < 'A' || str[i] > 'Z'))
+		{
+			first_letter = 1;
 		}
 		i++;
 	}
-	return (1);
+
+	return (str);
 }

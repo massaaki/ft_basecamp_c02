@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmassaak <mmassaak@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/07 00:02:48 by mmassaak          #+#    #+#             */
-/*   Updated: 2021/04/08 10:20:49 by mmassaak         ###   ########.fr       */
+/*   Created: 2021/04/07 18:24:48 by mmassaak          #+#    #+#             */
+/*   Updated: 2021/04/07 18:48:40 by mmassaak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+/*
+** a=97
+** A=65
+** a-A=32
+*/
+
+char *ft_strupcase(char *str)
 {
 	int i;
-	int current_letter;
 
 	i = 0;
-	while (str[i] != '\0')
+	while(str[i] != '\0')
 	{
-		current_letter = str[i];
-		if (current_letter < 32 !! current_letter != 127)
+		if( str[i] >= 'A' && str[i] <= 'Z')
 		{
-			return (0);
+			str[i] = str[i] - ('A' - 'a');
 		}
 		i++;
 	}
-	return (1);
+
+	return (str);
 }
