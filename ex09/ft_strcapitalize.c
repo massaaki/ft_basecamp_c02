@@ -6,25 +6,23 @@
 /*   By: mmassaak <mmassaak@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 18:52:26 by mmassaak          #+#    #+#             */
-/*   Updated: 2021/04/07 20:11:56 by mmassaak         ###   ########.fr       */
+/*   Updated: 2021/04/08 19:19:21 by mmassaak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char *ft_strcapitalize(char *str)
+char	*ft_strcapitalize(char *str)
 {
 	int i;
 	int first_letter;
 
 	i = 0;
 	first_letter = 1;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if(first_letter)
+		if (first_letter)
 		{
 			first_letter = 0;
-			if( str[i] >= 'a' && str[i] <= 'z')
+			if (str[i] >= 'a' && str[i] <= 'z')
 			{
 				str[i] = str[i] + ('A' - 'a');
 			}
@@ -36,6 +34,5 @@ char *ft_strcapitalize(char *str)
 		}
 		i++;
 	}
-
 	return (str);
 }
