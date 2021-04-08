@@ -6,7 +6,7 @@
 /*   By: mmassaak <mmassaak@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 18:24:48 by mmassaak          #+#    #+#             */
-/*   Updated: 2021/04/07 18:48:40 by mmassaak         ###   ########.fr       */
+/*   Updated: 2021/04/08 19:12:36 by mmassaak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,18 @@
 ** a-A=32
 */
 
-char *ft_strupcase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int i;
 
 	i = 0;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if( str[i] >= 'A' && str[i] <= 'Z')
+		if (str[i] >= 'A' && str[i] <= 'Z')
 		{
 			str[i] = str[i] - ('A' - 'a');
 		}
 		i++;
 	}
-
 	return (str);
 }

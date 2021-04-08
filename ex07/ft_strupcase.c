@@ -6,7 +6,7 @@
 /*   By: mmassaak <mmassaak@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 18:24:48 by mmassaak          #+#    #+#             */
-/*   Updated: 2021/04/07 18:42:56 by mmassaak         ###   ########.fr       */
+/*   Updated: 2021/04/08 19:10:10 by mmassaak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ char *ft_strupcase(char *str)
 		}
 		i++;
 	}
-
 	return (str);
 }

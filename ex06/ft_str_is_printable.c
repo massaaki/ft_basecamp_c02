@@ -6,7 +6,7 @@
 /*   By: mmassaak <mmassaak@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 00:02:48 by mmassaak          #+#    #+#             */
-/*   Updated: 2021/04/08 10:20:49 by mmassaak         ###   ########.fr       */
+/*   Updated: 2021/04/08 19:02:33 by mmassaak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_str_is_printable(char *str)
 	while (str[i] != '\0')
 	{
 		current_letter = str[i];
-		if (current_letter < 32 !! current_letter != 127)
+		if (current_letter < 32 && current_letter != 127)
 		{
 			return (0);
 		}
